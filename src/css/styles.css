@@ -1,0 +1,289 @@
+@import url('global.css');
+
+.container {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.section {
+    padding: 40px;
+}
+
+/* MAIN NAV */
+
+.main-nav {
+    width: 100%;
+
+    padding: 12px 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: rgba(15, 31, 57, 0.9);
+    backdrop-filter: blur(10px);
+
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 99999;
+
+    transition: top 0.5s;
+}
+
+.nav-link {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: var(--type);
+    text-decoration: none;
+
+    transition: color 0.2s ease-in-out;
+}
+
+.nav-link:hover {
+    color: var(--type-hov);
+}
+
+.nav-link:not(:last-child) {
+    margin-right: 40px;
+}
+
+.nav-menu-button {
+    display: none;
+    cursor: pointer;
+}
+
+.burger-bar {
+    width: 25px;
+    height: 2px;
+
+    border-radius: 3px;
+
+    background-color: var(--type);
+}
+
+.burger-bar:not(:last-child) {
+    margin-bottom: 7px;
+}
+
+.close-icon {
+    width: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .links-container {
+        display: none;
+
+        width: 95%;
+        
+        margin-top: 280px;
+
+        background-color: var(--dark);
+
+        border-radius: 10px;
+
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .nav-link {
+        width: 94%; /* ? */
+        
+        margin-right: 0 !important; /* ! FIX */
+        margin-bottom: 15px;
+        padding: 5px 0;
+
+        border-radius: 6px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: background-color 0.1s ease-in-out;
+    }
+
+    .nav-link:first-child {
+        margin-top: 15px;
+    }
+
+    .nav-menu-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .flex {
+        display: flex;
+    }
+    
+    .block {
+        display: block;
+    }
+    
+    .hide {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 601px) {
+    .links-container {
+        display: flex;
+    }
+}
+
+/* MAIN NAV */
+
+/* HERO */
+
+main {
+    /* height: calc(100vh - 120px); */
+    height: 100vh;
+    min-height: 500px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: left;
+
+    margin-top: 30px;
+}
+
+.animated-word,
+.hero-caret {
+    color: var(--accent);
+}
+
+.hero-caret {
+    font-weight: 300;
+    font-size: clamp(60px, 10vw, 90px);
+    animation: flickerCaret 0.9s infinite;
+}
+
+.caret-pause {
+    animation: none;
+}
+
+@keyframes flickerCaret {
+    from, to {
+        opacity: 0;
+    }
+
+    20%, 80% {
+        opacity: 1;
+    }
+}
+
+.hero-content {
+    width: 70%;
+}
+
+.hero-description {
+    width: max(255px, 60%);
+
+    margin: 20px 0 40px 0;
+
+    font-size: 1.2rem;
+}
+
+/* HERO */
+
+/* ABOUT ME */
+
+.dark-bg {
+    width: 100%;
+
+    background-color: var(--dark);
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-me-content {
+    width: clamp(300px, 600px, calc(70% + 80px));
+    min-height: 100vh;
+    /* height: 100vh; */
+    /* max-height: 800px; */
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.profile-picture {
+    width: 250px;
+    height: 250px; /* change to make resizable */
+
+    margin-bottom: 30px;
+    
+    object-fit: cover;
+
+    border: 3px solid var(--type);
+    border-radius: 50%;
+}
+
+.section-header {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+}
+
+.about-me-paragraphs {
+    min-height: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.about-me-p {
+    font-size: 1.1rem;
+    
+    color: var(--grey-type);
+
+    text-align: center;
+}
+
+.see-my-work-btn {
+    color: var(--grey-type);
+    font-size: 1.1rem;
+    
+    background: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    transition: color 0.2s ease-in-out;
+}
+
+.see-my-work-btn:hover {
+    color: var(--type);
+}
+
+.double-down-arrow {
+    width: 30px;
+    opacity: 0.7;
+
+    transition: opacity ease-in-out 0.2s;
+}
+
+.see-my-work-btn:hover .double-down-arrow {
+    opacity: 1;
+}
+
+.see-my-work-text {
+    margin-bottom: 15px;
+}

@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300;400;700&display=swap');
+
+:root {
+    --primary: #0F1F39;
+    --accent: #FF656F;
+    --type: #FFFFFF;
+    --dark: #070E1B;
+    --grey-type: #B5B5B5;
+
+    /* hover */
+
+    --dark-hov: #0b162a;
+    /* --accent-hov: #f74a56; */
+    --accent-hov: #F05A64;
+    --type-hov: #C3C3C3;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'Red Hat Display', sans-serif;
+}
+
+/* <a href="#" onclick="window.open('MyPDF.pdf', '_blank', 'fullscreen=yes'); return false;">MyPDF</a> */
+
+html {
+    scroll-behavior: smooth;
+}
+
+html,
+body {
+    min-height: 100%;
+    background-color: var(--primary);
+    color: var(--type);
+
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-size: 1.4rem;
+    text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+}
+
+h1 {
+    font-size: clamp(40px, 8vw, 80px);
+}
+
+h2 {
+    font-size: clamp(40px, 8vw, 80px);
+}
+
+h4 {
+    font-size: 2.6rem;
+}
+
+h6 {
+    font-size: 1.2rem;
+}
+
+p {
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: auto;
+}
+
+button {
+    border: none;
+    outline: none;
+    cursor: pointer
+}
+
+.accent-text {
+    color: var(--accent);
+}
+
+.grey-text {
+    color: var(--grey-type);
+}
+
+::selection {
+    color: var(--primary);
+    background: var(--accent);
+}
+
+::-moz-selection {
+    color: var(--primary);
+    background: var(--accent);
+}
+
+.red-button {
+    font-size: 1.2rem;
+    font-weight: bold;
+    
+    padding: 10px 20px;
+
+    border-radius: 15px;
+
+    background-color: var(--accent);
+    color: var(--type);
+    text-decoration: none;
+
+    transition: background-color 0.2s ease-in-out;
+}
+
+.red-button:hover {
+    background-color: var(--accent-hov);
+}
