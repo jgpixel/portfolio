@@ -1,5 +1,8 @@
-export default class AboutMe {
+import Component from '../Component.js';
+
+export default class AboutMe extends Component {
     constructor(props, root) {
+        super();
         this.props = props;
         this.root = root;
 
@@ -22,9 +25,12 @@ export default class AboutMe {
         header.textContent = 'About Me';
 
         const profilePicture = document.createElement('img');
-        profilePicture.className = 'profile-picture';
-        profilePicture.src = 'src/assets/images/pfp.jpg';
-        profilePicture.draggable = false;
+        this.setAttributes({
+            class: 'profile-picture',
+            src: 'src/assets/images/pfp.jpg',
+            alt: 'A picture of me!',
+            draggable: false
+        }, profilePicture);
 
         const aboutMeParagraphs = document.createElement('div');
         aboutMeParagraphs.className = 'about-me-paragraphs';

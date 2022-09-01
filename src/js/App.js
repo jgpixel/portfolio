@@ -47,6 +47,38 @@ export default class App {
             ]
         }, this.root);
 
-        new MyWork({}, this.root);
+        new MyWork({
+            projects: [
+                {
+                    title: 'Title',
+                    websiteLink: 'https://apple.com',
+                    githubLink: 'https://github.com',
+                    imageName: 'baen',
+                    imageAlt: 'baenbaen',
+                    description: 'lorem ipsum dolor sit amet',
+                    technologiesUsed: [
+                        'HTML',
+                        'CSS',
+                        'JavaScript',
+                        'DEEZ.js'
+                    ]
+                },
+                {
+                    title: 'Title',
+                    websiteLink: 'https://apple.com',
+                    githubLink: 'https://github.com',
+                    imageName: 'baen',
+                    imageAlt: 'baenbaen',
+                    description: 'lorem ipsum dolor sit amet',
+                    technologiesUsed: [
+                        'HTML',
+                        'CSS',
+                        'JavaScript',
+                        'DEEZ.js'
+                    ]
+                }
+            ]
+        }, this.root);
     }
+    // title, siteLink, githubLink, imageName, altText, description, technologiesUsed
 }

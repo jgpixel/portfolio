@@ -17,8 +17,8 @@ export default class Hero {
         const heroContent = document.createElement('div');
         heroContent.className = 'hero-content';
 
-        const myNameIs = document.createElement('h6');
-        myNameIs.className = 'accent-text';
+        const myNameIs = document.createElement('p');
+        myNameIs.classList.add('my-name-is', 'accent-text');
         myNameIs.textContent = 'Hi, my name is'
 
         const name = document.createElement('h1');

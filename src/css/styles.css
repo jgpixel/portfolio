@@ -6,7 +6,7 @@
 }
 
 .section {
-    padding: 40px;
+    padding: 45px;
 }
 
 /* MAIN NAV */
@@ -155,6 +155,11 @@ main {
     margin-top: 30px;
 }
 
+.my-name-is {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
 .animated-word,
 .hero-caret {
     color: var(--accent);
@@ -235,6 +240,7 @@ main {
 .section-header {
     font-size: 2.4rem;
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .about-me-paragraphs {
@@ -287,3 +293,64 @@ main {
 .see-my-work-text {
     margin-bottom: 15px;
 }
+
+/* MY WORK */
+
+.projects-container {
+    height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    width: clamp(300px, 1400px, calc(90% + 80px));
+}
+
+.project-container {
+    width: 80%;
+    
+    display: flex;
+    justify-content: space-between;
+    
+    margin: 0 auto 80px auto;
+}
+
+.project-container.reverse-project {
+    flex-direction: row-reverse;
+}
+
+.project-details {
+    width: 60%;
+}
+
+.website-title {
+    font-size: 1.8rem;
+}
+
+.website-img-container {
+    width: 35%;
+    height: 300px;
+
+    background-color: var(--primary);
+
+    border-radius: 10px;
+
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.website-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    /* transition: transform 0.3s ease-in-out; */
+    transition: transform 0.4s cubic-bezier(0.45, 0, 0.55, 1),
+                opacity 0.4s cubic-bezier(0.45, 0, 0.55, 1);
+}
+
+.website-img-container:hover .website-img {
+    transform: scale(1.03);
+    opacity: 0.65;
+}
+
+/* MY WORK */
