@@ -2,6 +2,7 @@ import Component from '../Component.js';
 
 export default class MyWork {
     static #projectIsReversed = false;
+    static #moreProjectsShown = false;
 
     constructor(props, root) {
         this.props = props;
@@ -15,6 +16,7 @@ export default class MyWork {
         darkBg.className = 'dark-bg';
 
         const projectsContainer = document.createElement('section');
+        projectsContainer.id = 'my-work';
         projectsContainer.classList.add('projects-container', 'container');
 
         const title = document.createElement('h2');
@@ -25,7 +27,7 @@ export default class MyWork {
         darkBg.appendChild(projectsContainer);
         projectsContainer.appendChild(title);
 
-        for (let i = 0; i < 2; i++) { // TODO: change to while i < 3
+        for (let i = 0; i < 3; i++) {
             new Project({
                 ...this.props.projects[i],
                 isReversed: MyWork.#projectIsReversed
@@ -33,6 +35,39 @@ export default class MyWork {
             
             MyWork.#projectIsReversed = !MyWork.#projectIsReversed;
         }
+
+        const moreProjectsContainer = document.createElement('div');
+        moreProjectsContainer.className = 'projects-container';
+        projectsContainer.appendChild(moreProjectsContainer);
+
+        const showMoreProjectsBtn = document.createElement('button');
+        showMoreProjectsBtn.className = 'red-button';
+        showMoreProjectsBtn.textContent = 'Show More';
+        
+        showMoreProjectsBtn.addEventListener('click', () => {
+            if (MyWork.#moreProjectsShown) {
+                const projects = document.querySelectorAll('.project-container');
+                
+                for (let i = 3; i < projects.length; i++) {
+                    projects[i].remove();
+                }
+
+                MyWork.#projectIsReversed = true;
+            } else {
+                for (let i = 3; i < this.props.projects.length; i++) { // TODO: isolate loop to method
+                    new Project({
+                        ...this.props.projects[i],
+                        isReversed: MyWork.#projectIsReversed
+                    }, moreProjectsContainer);
+                    
+                    MyWork.#projectIsReversed = !MyWork.#projectIsReversed;
+                }
+            }
+
+            MyWork.#moreProjectsShown = !MyWork.#moreProjectsShown;
+        });
+
+        projectsContainer.appendChild(showMoreProjectsBtn);
     }
 }
 

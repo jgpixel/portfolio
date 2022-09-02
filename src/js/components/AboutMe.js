@@ -65,7 +65,8 @@ export default class AboutMe extends Component {
         seeMyWorkBtn.appendChild(doubleDownArrow);
 
         seeMyWorkBtn.addEventListener('click', () => {
-            window.scrollTo(0, 300);
+            const { left, top } = this.getElementOffset(document.getElementById('my-work'));
+            window.scrollTo(left, top);
         });
     }
 }

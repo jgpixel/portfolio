@@ -297,10 +297,13 @@ main {
 /* MY WORK */
 
 .projects-container {
-    height: 100vh;
+    /* height: 100vh; */
 
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
+    
     width: clamp(300px, 1400px, calc(90% + 80px));
 }
 
