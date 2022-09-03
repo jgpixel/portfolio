@@ -10,8 +10,7 @@
     /* hover */
 
     --dark-hov: #0b162a;
-    /* --accent-hov: #f74a56; */
-    --accent-hov: #F05A64;
+    --accent-hov: #e54d57;
     --type-hov: #C3C3C3;
 }
 
@@ -19,8 +18,6 @@
     box-sizing: border-box;
     font-family: 'Red Hat Display', sans-serif;
 }
-
-/* <a href="#" onclick="window.open('MyPDF.pdf', '_blank', 'fullscreen=yes'); return false;">MyPDF</a> */
 
 html {
     scroll-behavior: smooth;
@@ -119,4 +116,13 @@ button {
 
 .red-button:hover {
     background-color: var(--accent-hov);
+}
+
+.fade-in {
+    opacity: 0;
+    transition: opacity 0.2s ease-in;
+}
+
+.fade-in.appear {
+    opacity: 1;
 }

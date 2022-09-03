@@ -17,7 +17,7 @@ export default class MyWork {
 
         const projectsContainer = document.createElement('section');
         projectsContainer.id = 'my-work';
-        projectsContainer.classList.add('projects-container', 'container');
+        projectsContainer.classList.add('projects-container', 'container', 'section');
 
         const title = document.createElement('h2');
         title.className = 'section-header';
@@ -52,13 +52,17 @@ export default class MyWork {
                     projects[i].remove();
                 }
 
+                showMoreProjectsBtn.textContent = 'Show More';
+
                 MyWork.#projectIsReversed = true;
             } else {
-                for (let i = 3; i < this.props.projects.length; i++) { // TODO: isolate loop to method
+                for (let i = 3; i < this.props.projects.length; i++) {
                     new Project({
                         ...this.props.projects[i],
                         isReversed: MyWork.#projectIsReversed
                     }, moreProjectsContainer);
+
+                    showMoreProjectsBtn.textContent = 'Show Less';
                     
                     MyWork.#projectIsReversed = !MyWork.#projectIsReversed;
                 }
@@ -74,6 +78,7 @@ export default class MyWork {
 class Project extends Component {
     constructor(props, root) {
         super();
+        
         this.props = props;
         this.root = root;
 
@@ -82,7 +87,7 @@ class Project extends Component {
 
     #render() {
         const projectContainer = document.createElement('div');
-        projectContainer.className = 'project-container';
+        projectContainer.classList.add('project-container', 'fade-in');
 
         if (this.props.isReversed) {
             projectContainer.classList.add('reverse-project');
@@ -111,7 +116,7 @@ class Project extends Component {
         const websiteLinkIcon = document.createElement('img');
         this.setAttributes({
             class: 'project-link-icon',
-            src: '',
+            src: 'src/assets/icons/website-link-icon.svg',
             alt: 'Visit the website.'
         }, websiteLinkIcon);
 
@@ -125,7 +130,7 @@ class Project extends Component {
         const githubIcon = document.createElement('img');
         this.setAttributes({
             class: 'project-link-icon',
-            src: '',
+            src: 'src/assets/icons/github-icon.svg',
             alt: 'Visit the Github page.'
         }, githubIcon);
 
@@ -136,8 +141,8 @@ class Project extends Component {
         websiteTitle.className = 'website-title';
         websiteTitle.textContent = this.props.title;
 
-        const websiteDescription = document.createElement('p');
-        websiteDescription.textContent = this.props.description;
+        const projectDescription = document.createElement('p');
+        projectDescription.textContent = this.props.description;
 
         const technologiesUsedTitle = document.createElement('p');
         technologiesUsedTitle.textContent = 'Technologies used:'
@@ -158,7 +163,7 @@ class Project extends Component {
 
         projectContainer.appendChild(projectDetailsContainer);
         projectDetailsContainer.appendChild(websiteTitle);
-        projectDetailsContainer.appendChild(websiteDescription);
+        projectDetailsContainer.appendChild(projectDescription);
         projectDetailsContainer.appendChild(technologiesUsedTitle);
         projectDetailsContainer.appendChild(technologiesUsedUl);
 
@@ -169,132 +174,6 @@ class Project extends Component {
             technologiesUsedUl.appendChild(technology);
         });
 
-
-
-
-        // this.root.appendChild(projectDiv);
-        //     projectDiv.classList.add("project");
-        //     projectDiv.classList.add("fade-in")
-
-        // if (isProjectReversed) {
-        //     projectDiv.classList.add("flip");
-        // }
-        // projectDiv.appendChild(siteImageContainer);
-        //     siteImageContainer.classList.add("site-image");
-        // siteImageContainer.appendChild(linksContainer);
-        //     linksContainer.classList.add("links-container");
-        // linksContainer.appendChild(siteLinkAnchor);
-        //     // this.setAttributes(siteLinkAnchor, { "href": this.siteLink, "target": "_blank" });
-        // siteLinkAnchor.appendChild(siteLinkIcon);
-        //     siteLinkIcon.classList.add("link-icon");
-        //     siteLinkIcon.setAttribute("src", "src/images/icons/link-icon.svg");
-        // linksContainer.appendChild(githubAnchor);
-        //     // this.setAttributes(githubAnchor, { "href": this.githubLink, "target": "_blank" });
-        // githubAnchor.appendChild(githubLogo);
-        //     githubLogo.classList.add("link-icon");
-        //     githubLogo.setAttribute("src", "src/images/icons/github-logo.svg");
-        // siteImageContainer.appendChild(siteImage);
-        //     siteImage.classList.add("card-image");
-        //     // this.setAttributes(siteImage, { "src": "src/images/" + this.imageName, "alt": this.altText, "draggable": "false" });
-        // projectDiv.appendChild(projectInfoDiv);
-        //     projectInfoDiv.classList.add("project-info");
-        // projectInfoDiv.appendChild(websiteTitle);
-        //     websiteTitle.textContent = this.title;
-        // projectInfoDiv.appendChild(descriptionEl);
-        //     descriptionEl.classList.add("light-text");
-        //     descriptionEl.textContent = this.description;
-        // projectInfoDiv.appendChild(technologiesUsedTitle);
-        //     technologiesUsedTitle.classList.add("light-text");
-        //     technologiesUsedTitle.textContent = "Technologies used:";
-        // projectInfoDiv.append(technologiesUsedUl);
-        // technologiesUsedUl.classList.add("technologies-used-list");
-        
-        // this.technologiesUsed.forEach(technology => {
-        //     const li = document.createElement("li");
-        //     technologiesUsedUl.appendChild(li);
-        //     li.textContent = technology;
-        // });
+        Component.fadeInAnimations(this.root);
     }
 }
-
-// let isProjectReversed = false;
-
-// class Projectt {
-//     constructor(title, siteLink, githubLink, imageName, altText, description, technologiesUsed) {
-//         this.title = title;
-//         this.siteLink = siteLink;
-//         this.githubLink = githubLink;
-//         this.imageName = imageName;
-//         this.altText = altText;
-//         this.description = description;
-//         this.technologiesUsed = technologiesUsed;
-//     }
-
-//     createProject() {
-//         const projectDiv = document.createElement("div");
-//         const siteImageContainer = document.createElement("div");
-//         const siteImage = document.createElement("img");
-//         const siteLinkAnchor = document.createElement("a");
-//         const siteLinkIcon = document.createElement("img");
-//         const githubAnchor = document.createElement("a");
-//         const githubLogo = document.createElement("img");
-//         const projectInfoDiv = document.createElement("div");
-//         const websiteTitle = document.createElement("h5");
-//         const descriptionEl = document.createElement("p");
-//         const technologiesUsedTitle = document.createElement("p");
-//         const technologiesUsedUl = document.createElement("ul");
-//         const linksContainer = document.createElement("div");
-//         const workRoot = '';
-
-//         workRoot.appendChild(projectDiv);
-//             projectDiv.classList.add("project");
-//             projectDiv.classList.add("fade-in")
-
-//         if (isProjectReversed) {
-//             projectDiv.classList.add("flip");
-//         }
-//         projectDiv.appendChild(siteImageContainer);
-//             siteImageContainer.classList.add("site-image");
-//         siteImageContainer.appendChild(linksContainer);
-//             linksContainer.classList.add("links-container");
-//         linksContainer.appendChild(siteLinkAnchor);
-//             this.setAttributes(siteLinkAnchor, { "href": this.siteLink, "target": "_blank" });
-//         siteLinkAnchor.appendChild(siteLinkIcon);
-//             siteLinkIcon.classList.add("link-icon");
-//             siteLinkIcon.setAttribute("src", "src/images/icons/link-icon.svg");
-//         linksContainer.appendChild(githubAnchor);
-//             this.setAttributes(githubAnchor, { "href": this.githubLink, "target": "_blank" });
-//         githubAnchor.appendChild(githubLogo);
-//             githubLogo.classList.add("link-icon");
-//             githubLogo.setAttribute("src", "src/images/icons/github-logo.svg");
-//         siteImageContainer.appendChild(siteImage);
-//             siteImage.classList.add("card-image");
-//             this.setAttributes(siteImage, { "src": "src/images/" + this.imageName, "alt": this.altText, "draggable": "false" });
-//         projectDiv.appendChild(projectInfoDiv);
-//             projectInfoDiv.classList.add("project-info");
-//         projectInfoDiv.appendChild(websiteTitle);
-//             websiteTitle.textContent = this.title;
-//         projectInfoDiv.appendChild(descriptionEl);
-//             descriptionEl.classList.add("light-text");
-//             descriptionEl.textContent = this.description;
-//         projectInfoDiv.appendChild(technologiesUsedTitle);
-//             technologiesUsedTitle.classList.add("light-text");
-//             technologiesUsedTitle.textContent = "Technologies used:";
-//         projectInfoDiv.append(technologiesUsedUl);
-//         technologiesUsedUl.classList.add("technologies-used-list");
-        
-//         this.technologiesUsed.forEach(technology => {
-//             const li = document.createElement("li");
-//             technologiesUsedUl.appendChild(li);
-//             li.textContent = technology;
-//         });
-
-//         isProjectReversed = !isProjectReversed;
-//     }
-
-//     setAttributes(element, attributes) {
-//         for (const key in attributes) {
-//             element.setAttribute(key, attributes[key]);
-//         }
-//     }
-// }

@@ -2,9 +2,13 @@ import Navbar from './components/Navbar.js';
 import Hero from './components/Hero.js';
 import AboutMe from './components/AboutMe.js';
 import MyWork from './components/MyWork.js';
+import WorkExperience from './components/WorkExperience.js';
+import Component from './Component.js';
 
-export default class App {
+export default class App extends Component {
     constructor(root) {
+        super();
+
         this.root = root;
 
         this.#render()
@@ -31,7 +35,7 @@ export default class App {
                 },
             ]
         }, this.root);
-        
+
         new Hero({
             description: `Design is a passion of mine. Lorem ipsum dolor sit amet.
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit,
@@ -135,6 +139,7 @@ export default class App {
                 }
             ]
         }, this.root);
+
+        new WorkExperience({}, this.root);
     }
-    // title, siteLink, githubLink, imageName, altText, description, technologiesUsed
 }

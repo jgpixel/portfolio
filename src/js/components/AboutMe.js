@@ -14,7 +14,7 @@ export default class AboutMe extends Component {
         background.className = 'dark-bg';
 
         const section = document.createElement('section');
-        section.classList.add('container', 'center');
+        section.classList.add('container', 'center', 'fade-in');
 
         const aboutMeContent = document.createElement('div');
         aboutMeContent.id = 'about';
@@ -56,9 +56,11 @@ export default class AboutMe extends Component {
         seeMyWorkText.textContent = 'See My Work';
 
         const doubleDownArrow = document.createElement('img');
-        doubleDownArrow.className = 'double-down-arrow';
-        doubleDownArrow.src = 'src/assets/icons/double-down-arrow.png';
-        doubleDownArrow.alt = 'Down arrow.';
+        this.setAttributes({
+            class: 'double-down-arrow',
+            src: 'src/assets/icons/double-down-arrow.png',
+            alt: 'Down arrow.'
+        }, doubleDownArrow);
 
         aboutMeParagraphs.appendChild(seeMyWorkBtn);
         seeMyWorkBtn.appendChild(seeMyWorkText);

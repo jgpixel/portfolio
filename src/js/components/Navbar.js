@@ -1,3 +1,5 @@
+import Component from '../Component.js';
+
 export default class Navbar {
     constructor(props, root) {
         this.props = props;
@@ -48,8 +50,9 @@ export default class Navbar {
     }
 }
 
-class NavLink {
+class NavLink extends Component {
     constructor(props, root) {
+        super();
         this.props = props;
         this.root = root;
 
@@ -58,18 +61,30 @@ class NavLink {
 
     #render() {
         const a = document.createElement('a');
-        a.className = 'nav-link';
         a.textContent = this.props.text;
-        a.setAttribute('href', `#${this.props.href}`);
+        this.setAttributes({
+            class: 'nav-link',
+            href: `#${this.props.href}`
+        }, a);
+
+        a.addEventListener('click', () => {
+            document.querySelector('.hamburger-icon').classList.add('block');
+            document.querySelector('.hamburger-icon').classList.remove('hide');
+            document.querySelector('.close-icon').classList.add('hide');
+
+            document.querySelector('.links-container').classList.add('hide');
+            document.querySelector('.links-container').classList.remove('flex');
+        });
 
         this.root.appendChild(a);
     }
 }
 
-class HamburgerMenu {
-    menuOpen = false;
+class HamburgerMenu extends Component {
+    #menuOpen = false;
 
     constructor(props, root) {
+        super();
         this.props = props;
         this.root = root;
 
@@ -91,29 +106,35 @@ class HamburgerMenu {
 
         const closeIcon = document.createElement('img');
         closeIcon.classList.add('close-icon', 'hide');
-        closeIcon.setAttribute('src', 'src/assets/icons/close-icon.svg');
+        this.setAttributes({
+            src: 'src/assets/icons/close-icon.svg',
+            draggable: false
+        }, closeIcon);
 
         this.root.appendChild(navMenuButton);
         navMenuButton.appendChild(hamburgerIcon);
         navMenuButton.appendChild(closeIcon);
 
         navMenuButton.addEventListener('click', () => {
-            if (!this.menuOpen) {
-                hamburgerIcon.classList.add('hide');
-                closeIcon.classList.add('flex');
-                closeIcon.classList.remove('hide');
-
-                this.props.nav.classList.add('flex');
-                this.props.nav.classList.remove('hide');
-            } else {
+            if (this.#menuOpen) {
                 hamburgerIcon.classList.add('block');
                 hamburgerIcon.classList.remove('hide');
                 closeIcon.classList.add('hide');
 
                 this.props.nav.classList.add('hide');
                 this.props.nav.classList.remove('flex');
+            } else {
+                hamburgerIcon.classList.add('hide');
+                closeIcon.classList.add('flex');
+                closeIcon.classList.remove('hide');
+
+                this.props.nav.classList.add('flex');
+                this.props.nav.classList.remove('hide');
             }
-            this.menuOpen = !this.menuOpen;
+            
+            this.#menuOpen = !this.#menuOpen;
         });
     }
 }
+
+// TODO: make navbar close when link clicked
