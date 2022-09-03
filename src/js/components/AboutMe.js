@@ -2,9 +2,7 @@ import Component from '../Component.js';
 
 export default class AboutMe extends Component {
     constructor(props, root) {
-        super();
-        this.props = props;
-        this.root = root;
+        super(props, root);
 
         this.#render();
     }
@@ -25,7 +23,7 @@ export default class AboutMe extends Component {
         header.textContent = 'About Me';
 
         const profilePicture = document.createElement('img');
-        this.setAttributes({
+        Component.setAttributes({
             class: 'profile-picture',
             src: 'src/assets/images/pfp.jpg',
             alt: 'A picture of me!',
@@ -56,7 +54,7 @@ export default class AboutMe extends Component {
         seeMyWorkText.textContent = 'See My Work';
 
         const doubleDownArrow = document.createElement('img');
-        this.setAttributes({
+        Component.setAttributes({
             class: 'double-down-arrow',
             src: 'src/assets/icons/double-down-arrow.png',
             alt: 'Down arrow.'
@@ -67,16 +65,15 @@ export default class AboutMe extends Component {
         seeMyWorkBtn.appendChild(doubleDownArrow);
 
         seeMyWorkBtn.addEventListener('click', () => {
-            const { left, top } = this.getElementOffset(document.getElementById('my-work'));
+            const { left, top } = Component.getElementOffset(document.getElementById('work'));
             window.scrollTo(left, top);
         });
     }
 }
 
-class Paragraph {
+class Paragraph extends Component {
     constructor(props, root) {
-        this.props = props;
-        this.root = root;
+        super(props, root)
 
         this.#render();
     }

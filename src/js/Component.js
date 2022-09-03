@@ -1,11 +1,16 @@
 export default class Component {
-    setAttributes(attributes, element) {
+    constructor(props, root) {
+        this.props = props;
+        this.root = root;
+    }
+
+    static setAttributes(attributes, element) {
         for (const key in attributes) {
             element.setAttribute(key, attributes[key]);
         }
     }
 
-    getElementOffset(element) {
+    static getElementOffset(element) {
         const rect = element.getBoundingClientRect();
         
         return {

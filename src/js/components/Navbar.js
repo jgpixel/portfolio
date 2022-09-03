@@ -1,9 +1,8 @@
 import Component from '../Component.js';
 
-export default class Navbar {
+export default class Navbar extends Component {
     constructor(props, root) {
-        this.props = props;
-        this.root = root;
+        super(props, root);
 
         this.#render();
     }
@@ -56,9 +55,7 @@ export default class Navbar {
 
 class NavLink extends Component {
     constructor(props, root) {
-        super();
-        this.props = props;
-        this.root = root;
+        super(props, root);
 
         this.#render();
     }
@@ -66,7 +63,7 @@ class NavLink extends Component {
     #render() {
         const a = document.createElement('a');
         a.textContent = this.props.text;
-        this.setAttributes({
+        Component.setAttributes({
             class: 'nav-link',
             href: `#${this.props.href}`
         }, a);
@@ -90,9 +87,7 @@ class HamburgerMenu extends Component {
     #menuOpen = false;
 
     constructor(props, root) {
-        super();
-        this.props = props;
-        this.root = root;
+        super(props, root);
 
         this.#render();
     }
@@ -112,7 +107,7 @@ class HamburgerMenu extends Component {
 
         const closeIcon = document.createElement('img');
         closeIcon.classList.add('close-icon', 'hide');
-        this.setAttributes({
+        Component.setAttributes({
             src: 'src/assets/icons/close-icon.svg',
             draggable: false
         }, closeIcon);

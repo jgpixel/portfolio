@@ -5,6 +5,7 @@
     --accent: #FF656F;
     --type: #FFFFFF;
     --dark: #070E1B;
+    --light: #FFF; /* ! DELETE */
     --grey-type: #B5B5B5;
 
     /* hover */
@@ -21,6 +22,7 @@
 
 html {
     scroll-behavior: smooth;
+    min-width: 100vw;
 }
 
 html,
@@ -99,6 +101,10 @@ button {
 
 .red-button {
     width: fit-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
     
     font-size: 1.2rem;
     font-weight: bold;
@@ -126,3 +132,73 @@ button {
 .fade-in.appear {
     opacity: 1;
 }
+
+/* FOOTER */
+
+.footer {
+    flex-shrink: 0;
+    background-color: var(--dark);
+    padding: 60px;
+    color: var(--grey-type);
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1rem;
+    text-align: center;
+}
+
+.socials,
+.copyright {
+    width: 20%;
+}
+
+.credit {
+    width: 60%;
+
+    color: var(--grey-type);
+    text-decoration: none;
+
+    transition: color 0.2s ease-in-out;
+}
+
+.credit:hover {
+    color: var(--type);
+}
+
+.social-icon {
+    height: 25px;
+    width: 25px;
+
+    opacity: 0.6;
+
+    transition: opacity 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    opacity: 1.0;
+}
+
+.socials {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 750px) {
+    .footer {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .socials,
+    .credit,
+    .copyright {
+        width: 90%;
+    }
+
+    .footer .copyright,
+    .footer .credit {
+        margin-bottom: 40px;
+    }
+}
+
+/* FOOTER */

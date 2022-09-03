@@ -1,12 +1,11 @@
 import Component from '../Component.js';
 
-export default class MyWork {
+export default class MyWork extends Component {
     static #projectIsReversed = false;
     static #moreProjectsShown = false;
 
     constructor(props, root) {
-        this.props = props;
-        this.root = root;
+        super(props, root)
 
         this.#render();
     }
@@ -16,7 +15,7 @@ export default class MyWork {
         darkBg.className = 'dark-bg';
 
         const projectsContainer = document.createElement('section');
-        projectsContainer.id = 'my-work';
+        projectsContainer.id = 'work';
         projectsContainer.classList.add('projects-container', 'container', 'section');
 
         const title = document.createElement('h2');
@@ -77,10 +76,7 @@ export default class MyWork {
 
 class Project extends Component {
     constructor(props, root) {
-        super();
-        
-        this.props = props;
-        this.root = root;
+        super(props, root);
 
         this.#render();
     }
@@ -97,7 +93,7 @@ class Project extends Component {
         websiteImgContainer.className = 'website-img-container';
 
         const websiteImg = document.createElement('img');
-        this.setAttributes({
+        Component.setAttributes({
             class: 'website-img',
             src: 'src/assets/images/my-work-imgs/wordle.png',
             alt: this.props.imageAlt
@@ -107,28 +103,28 @@ class Project extends Component {
         linksContainer.className = 'project-links-container';
 
         const websiteAnchor = document.createElement('a');
-        this.setAttributes({
+        Component.setAttributes({
             class: 'website-anchor',
             href: this.props.websiteLink,
             target: '_blank'
         }, websiteAnchor);
 
         const websiteLinkIcon = document.createElement('img');
-        this.setAttributes({
+        Component.setAttributes({
             class: 'project-link-icon',
             src: 'src/assets/icons/website-link-icon.svg',
             alt: 'Visit the website.'
         }, websiteLinkIcon);
 
         const githubAnchor = document.createElement('a');
-        this.setAttributes({
+        Component.setAttributes({
             class: 'github-anchor',
             href: this.props.githubLink,
             target: '_blank'
         }, githubAnchor);
 
         const githubIcon = document.createElement('img');
-        this.setAttributes({
+        Component.setAttributes({
             class: 'project-link-icon',
             src: 'src/assets/icons/github-icon.svg',
             alt: 'Visit the Github page.'

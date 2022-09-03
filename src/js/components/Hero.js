@@ -1,9 +1,9 @@
+import Component from '../Component.js';
 import RedButton from './RedButton.js';
 
-export default class Hero {
-    constructor(props, root = document.getElementById('root')) {
-        this.props = props;
-        this.root = root;
+export default class Hero extends Component{
+    constructor(props, root) {
+        super(props, root)
 
         this.#render();
     }
@@ -43,16 +43,15 @@ export default class Hero {
         new RedButton({
             text: 'See My Resume',
             callback: () => {
-                window.open('../src/assets/justin-gorelik-resume.pdf');
+                window.open('../src/assets/justin-gorelik-resume.pdf', '_blank');
             }
         }, heroContent);
     }
 }
 
-class TextAnimation {
+class TextAnimation extends Component {
     constructor(props, root) {
-        this.props = props;
-        this.root = root;
+        super(props, root);
 
         this.#render();
     }
