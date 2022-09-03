@@ -23,7 +23,7 @@ export default class App extends Component {
                 },
                 {
                     text: 'Work',
-                    href: 'work'
+                    href: 'my-work'
                 },
                 {
                     text: 'Experience',

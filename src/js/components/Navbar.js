@@ -22,17 +22,21 @@ export default class Navbar {
         const linksContainer = document.createElement('div');
         linksContainer.className = 'links-container';
 
-        this.props.links.forEach(link => {
-            new NavLink(link, linksContainer);
-        });
-
         this.root.appendChild(nav);
         nav.appendChild(logo);
         logo.appendChild(dot);
         nav.appendChild(linksContainer);
-        new HamburgerMenu({
+
+        const hamburgerMenu = new HamburgerMenu({
             nav: linksContainer
         }, nav);
+
+        this.props.links.forEach(link => {
+            new NavLink({
+                ...link,
+                hamburgerMenu: hamburgerMenu
+            }, linksContainer);
+        });
 
         let prevScrollPos = window.pageYOffset;
 
@@ -74,6 +78,8 @@ class NavLink extends Component {
 
             document.querySelector('.links-container').classList.add('hide');
             document.querySelector('.links-container').classList.remove('flex');
+
+            this.props.hamburgerMenu.menuOpen = false;
         });
 
         this.root.appendChild(a);
@@ -135,6 +141,11 @@ class HamburgerMenu extends Component {
             this.#menuOpen = !this.#menuOpen;
         });
     }
-}
 
-// TODO: make navbar close when link clicked
+    /**
+     * @param {boolean} menuOpen
+     */
+    set menuOpen(menuOpen) {
+        this.#menuOpen = menuOpen;
+    }
+}
