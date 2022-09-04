@@ -184,6 +184,8 @@ export default class App extends Component {
 /* 
 
 TODO:
+
 - convert all images to .webp format
+- update focus state on links
 
 */
