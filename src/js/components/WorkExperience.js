@@ -50,9 +50,9 @@ class ExperienceCard extends Component {
 
         const company = document.createElement('a');
         Component.setAttributes({
-            class: 'company-anchor link',
-            href: this.props.companyWebsite,
-            target: '_blank'
+            'class': 'company-anchor link',
+            'href': this.props.companyWebsite,
+            'target': '_blank'
         }, company);
         company.textContent = `@ ${this.props.companyName}`;
 

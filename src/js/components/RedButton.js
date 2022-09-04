@@ -13,9 +13,9 @@ export default class RedButton extends Component {
         if (this.props.icon) {
             const icon = document.createElement('img');
             Component.setAttributes({
-                class: 'button-icon',
-                src: this.props.icon,
-                alt: 'this.props.iconAlt'
+                'class': 'button-icon',
+                'src': this.props.icon,
+                'alt': 'this.props.iconAlt'
             }, icon)
             button.appendChild(icon);
         }

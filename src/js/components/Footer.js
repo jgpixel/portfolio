@@ -16,9 +16,9 @@ export default class Footer extends Component {
 
         const credit = document.createElement('a');
         Component.setAttributes({
-            class: 'credit',
-            href: this.props.projectLink,
-            target: '_blank'
+            'class': 'credit',
+            'href': this.props.projectLink,
+            'target': '_blank'
         }, credit);
         credit.textContent = 'Designed and developed by Justin Gorelik'
 
@@ -28,15 +28,15 @@ export default class Footer extends Component {
         this.props.socials.forEach(social => {
             const socialLink = document.createElement('a');
             Component.setAttributes({
-                href: social.href,
-                target: '_blank'
+                'href': social.href,
+                'target': '_blank'
             }, socialLink);
 
             const socialIcon = document.createElement('img');
             Component.setAttributes({
-                class: 'social-icon',
-                src: social.icon,
-                alt: social.alt
+                'class': 'social-icon',
+                'src': social.icon,
+                'alt': social.alt
             }, socialIcon);
 
             socials.appendChild(socialLink);

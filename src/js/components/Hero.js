@@ -91,11 +91,11 @@ class TextAnimation extends Component {
         function changeWord() {
             for (let i = 0; i <= titleWords[wordIndex].length * CHAR_SPEED; i += CHAR_SPEED) {
                 setTimeout(() => {
-                    caret.classList.add("caret-pause");
+                    caret.classList.add('caret-pause');
                     animatedWord.textContent = titleWords[wordIndex].substring(0, caretIndex);
 
                     if (i === titleWords[wordIndex].length * CHAR_SPEED) {
-                        caret.classList.remove("caret-pause");
+                        caret.classList.remove('caret-pause');
                     }
 
                     caretIndex++;
@@ -103,14 +103,14 @@ class TextAnimation extends Component {
             }
 
             setTimeout(() => {
-                caret.classList.add("caret-pause");
+                caret.classList.add('caret-pause');
                 caretIndex = titleWords[wordIndex].length;
                 for (let i = 0; i <= titleWords[wordIndex].length * CHAR_SPEED; i += CHAR_SPEED) {
                     setTimeout(() => {
                         animatedWord.textContent = titleWords[wordIndex].substring(0, caretIndex - 1);
                         if (i === titleWords[wordIndex].length * CHAR_SPEED) {
                             setTimeout(() => {
-                                caret.classList.remove("caret-pause");
+                                caret.classList.remove('caret-pause');
                             }, 15);
                         }
                         caretIndex--;

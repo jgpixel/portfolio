@@ -12,8 +12,8 @@ export default class Navbar extends Component {
 
         const logoAnchor = document.createElement('a');
         Component.setAttributes({
-            class: 'link',
-            href: 'https://jgpixel.com'
+            'class': 'link',
+            'href': 'https://jgpixel.com'
         }, logoAnchor);
 
         const logo = document.createElement('h4');
@@ -69,8 +69,8 @@ class NavLink extends Component {
         const a = document.createElement('a');
         a.textContent = this.props.text;
         Component.setAttributes({
-            class: 'nav-link link',
-            href: `#${this.props.href}`
+            'class': 'nav-link link',
+            'href': `#${this.props.href}`
         }, a);
 
         a.addEventListener('click', () => {
@@ -112,9 +112,9 @@ class HamburgerMenu extends Component {
 
         const closeIcon = document.createElement('img');
         Component.setAttributes({
-            class: 'close-icon hide',
-            src: 'src/assets/icons/close-icon.svg',
-            draggable: false
+            'class': 'close-icon hide',
+            'src': 'src/assets/icons/close-icon.svg',
+            'draggable': false
         }, closeIcon);
 
         this.root.appendChild(navMenuButton);

@@ -92,10 +92,10 @@ class Project extends Component {
 
         const websiteImg = document.createElement('img');
         Component.setAttributes({
-            class: 'website-img',
-            src: this.props.websiteImg,
-            alt: this.props.imageAlt,
-            loading: 'lazy'
+            'class': 'website-img',
+            'src': this.props.websiteImg,
+            'alt': this.props.imageAlt,
+            'loading': 'lazy'
         }, websiteImg);
 
         const linksContainer = document.createElement('div');
@@ -103,30 +103,30 @@ class Project extends Component {
 
         const websiteAnchor = document.createElement('a');
         Component.setAttributes({
-            class: 'website-anchor',
-            href: this.props.websiteLink,
-            target: '_blank'
+            'class': 'website-anchor',
+            'href': this.props.websiteLink,
+            'target': '_blank'
         }, websiteAnchor);
 
         const websiteLinkIcon = document.createElement('img');
         Component.setAttributes({
-            class: 'project-link-icon',
-            src: 'src/assets/icons/website-link-icon.svg',
-            alt: 'Visit the website.'
+            'class': 'project-link-icon',
+            'src': 'src/assets/icons/website-link-icon.svg',
+            'alt': 'Visit the website.'
         }, websiteLinkIcon);
 
         const githubAnchor = document.createElement('a');
         Component.setAttributes({
-            class: 'github-anchor',
-            href: this.props.githubLink,
-            target: '_blank'
+            'class': 'github-anchor',
+            'href': this.props.githubLink,
+            'target': '_blank'
         }, githubAnchor);
 
         const githubIcon = document.createElement('img');
         Component.setAttributes({
-            class: 'project-link-icon',
-            src: 'src/assets/icons/github-icon.svg',
-            alt: 'Visit the Github page.'
+            'class': 'project-link-icon',
+            'src': 'src/assets/icons/github-icon.svg',
+            'alt': 'Visit the Github page.'
         }, githubIcon);
 
         const projectDetailsContainer = document.createElement('div');

@@ -41,7 +41,7 @@ export default class App extends Component {
         }, this.root);
 
         new Hero({
-            description: `Hey there! I am a passionate front-end developer and UX/UI designer. I am a problem solver, and pay extreme attention to detail in my designs. Let's work together.`
+            description: 'Hey there! I am a passionate front-end developer and UX/UI designer. I am a problem solver, and pay extreme attention to detail in my designs. Let\'s work together.'
         }, this.root);
 
         new AboutMe({
@@ -58,9 +58,9 @@ export default class App extends Component {
                     title: 'Wordle Clone',
                     websiteLink: 'https://justinswordle.netlify.app',
                     githubLink: 'https://github.com/jgpixel/WordleClone',
-                    websiteImg: 'src/assets/images/my-work-imgs/wordle.png',
+                    websiteImg: 'src/assets/images/my-work-imgs/wordle.webp',
                     imageAlt: 'Wordle Clone.',
-                    description: 'A clone of the hit game "Wordle".',
+                    description: 'A clone of the hit game \'Wordle\'.',
                     technologiesUsed: [
                         'HTML',
                         'CSS',
@@ -70,7 +70,7 @@ export default class App extends Component {
                 {
                     title: 'NFT+',
                     websiteLink: 'https://www.figma.com/proto/oOS4radHzRBZOTIvvzbDyi/NFT%2B?node-id=0%3A1141&scaling=contain&page-id=0%3A1&starting-point-node-id=0%3A1141',
-                    websiteImg: 'src/assets/images/my-work-imgs/nft+.png',
+                    websiteImg: 'src/assets/images/my-work-imgs/nft+.webp',
                     imageAlt: 'NFT+ frames.',
                     description: 'Design mockup for a concept NFT trading platform. Click the link to see clickable prototype!',
                     technologiesUsed: [
@@ -81,7 +81,7 @@ export default class App extends Component {
                 {
                     title: 'TitanFlow',
                     websiteLink: 'https://www.titanflow.io',
-                    websiteImg: 'src/assets/images/my-work-imgs/titanflow.png',
+                    websiteImg: 'src/assets/images/my-work-imgs/titanflow.webp',
                     imageAlt: 'TitanFlow landing page.',
                     description: 'Website for stock options flow service.',
                     technologiesUsed: [
@@ -92,7 +92,7 @@ export default class App extends Component {
                     title: 'Todo List',
                     websiteLink: 'https://frontend-mentor-todo-app-challenge.netlify.app/',
                     githubLink: 'https://github.com/jgpixel/Frontend-Mentor-Todo-App',
-                    websiteImg: 'src/assets/images/my-work-imgs/todo-list.png',
+                    websiteImg: 'src/assets/images/my-work-imgs/todo-list.webp',
                     imageAlt: 'To do list.',
                     description: 'Front-end challenge from Frontend Mentor.',
                     technologiesUsed: [
@@ -105,7 +105,7 @@ export default class App extends Component {
                     title: 'JG Piano',
                     websiteLink: 'https://jgpiano.netlify.app',
                     githubLink: 'https://github.com/jgpixel/jg-piano',
-                    websiteImg: 'src/assets/images/my-work-imgs/jg-piano.png',
+                    websiteImg: 'src/assets/images/my-work-imgs/jg-piano.webp',
                     imageAlt: 'Landing page of JG Piano.',
                     description: 'My piano portfolio!',
                     technologiesUsed: [
@@ -120,35 +120,35 @@ export default class App extends Component {
         new WorkExperience({
             jobs: [
                 {
-                    positionTitle: "UX/UI Designer",
-                    companyName: "TitanFlow",
-                    companyWebsite: "https://titanflow.io/",
-                    workStartDate: "June 2020",
-                    workEndDate: "Present",
+                    positionTitle: 'UX/UI Designer',
+                    companyName: 'TitanFlow',
+                    companyWebsite: 'https://titanflow.io/',
+                    workStartDate: 'June 2020',
+                    workEndDate: 'Present',
                     jobResponsibilities: [
-                        "Assisted in the design of intuitive, simple, and engaging in-app components/features.",
-                        "Designer for branding and social media related graphics and animations."
+                        'Assisted in the design of intuitive, simple, and engaging in-app components/features.',
+                        'Designer for branding and social media related graphics and animations.'
                     ]
                 },
                 {
-                    positionTitle: "Web Design Intern",
-                    companyName: "GoreMediaSolutions",
-                    companyWebsite: "http://goremediasolutions.com/",
-                    workStartDate: "December 2019",
-                    workEndDate: "April 2020",
+                    positionTitle: 'Web Design Intern',
+                    companyName: 'GoreMediaSolutions',
+                    companyWebsite: 'http://goremediasolutions.com/',
+                    workStartDate: 'December 2019',
+                    workEndDate: 'April 2020',
                     jobResponsibilities: [
-                        "Assisted in the designing of websites for the clients of GoreMediaSolutions.",
-                        "Created the layout for an internal catalog of inventory."
+                        'Assisted in the designing of websites for the clients of GoreMediaSolutions.',
+                        'Created the layout for an internal catalog of inventory.'
                     ]
                 },
                 {
-                    positionTitle: "Snapchat Lens Developer",
-                    companyName: "Legre Eyewear",
-                    companyWebsite: "https://legre.com/",
-                    workStartDate: "October 2018",
-                    workEndDate: "January 2020",
+                    positionTitle: 'Snapchat Lens Developer',
+                    companyName: 'Legre Eyewear',
+                    companyWebsite: 'https://legre.com/',
+                    workStartDate: 'October 2018',
+                    workEndDate: 'January 2020',
                     jobResponsibilities: [
-                        "Created interactive Snapchat lenses that allowed users to try on multiple styles of the brand's glasses."
+                        'Created interactive Snapchat lenses that allowed users to try on multiple styles of the brand\'s glasses.'
                     ]
                 }
             ]
@@ -185,7 +185,6 @@ export default class App extends Component {
 
 TODO:
 
-- convert all images to .webp format
 - update focus state on links
 
 */

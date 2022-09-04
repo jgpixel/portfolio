@@ -23,9 +23,9 @@ export default class AboutMe extends Component {
 
         const profilePicture = document.createElement('img');
         Component.setAttributes({
-            class: 'profile-picture',
-            src: 'src/assets/images/pfp.jpg',
-            alt: 'A picture of me!',
+            'class': 'profile-picture',
+            'src': 'src/assets/images/pfp.webp',
+            'alt': 'A picture of me!',
             draggable: false
         }, profilePicture);
 
@@ -54,9 +54,9 @@ export default class AboutMe extends Component {
 
         const doubleDownArrow = document.createElement('img');
         Component.setAttributes({
-            class: 'double-down-arrow',
-            src: 'src/assets/icons/double-down-arrow.png',
-            alt: 'Down arrow.'
+            'class': 'double-down-arrow',
+            'src': 'src/assets/icons/double-down-arrow.png',
+            'alt': 'Down arrow.'
         }, doubleDownArrow);
 
         aboutMeParagraphs.appendChild(seeMyWorkBtn);
@@ -84,5 +84,3 @@ class Paragraph extends Component {
         this.root.appendChild(p);
     }
 }
-
-// TODO: set min heights on sections
