@@ -11,13 +11,12 @@ import WebsiteLoader from './components/WebsiteLoader.js';
 export default class App extends Component {
     constructor(props, root) {
         super(props, root);
-
         this.#render()
     }
 
     #render() {
         new WebsiteLoader({
-            animationDuration: 3000
+            animationDuration: 6500
         }, this.root);
 
         new Navbar({
@@ -27,7 +26,7 @@ export default class App extends Component {
                     href: 'about'
                 },
                 {
-                    text: 'My Work',
+                    text: 'Work',
                     href: 'work'
                 },
                 {
@@ -42,10 +41,7 @@ export default class App extends Component {
         }, this.root);
 
         new Hero({
-            description: `Design is a passion of mine. Lorem ipsum dolor sit amet.
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                            sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua.`
+            description: `Hey there! I am a passionate front-end developer and UX/UI designer. I am a problem solver, and pay extreme attention to detail in my designs. Let's work together.`
         }, this.root);
 
         new AboutMe({
@@ -59,87 +55,63 @@ export default class App extends Component {
         new MyWork({
             projects: [
                 {
-                    title: 'Title',
-                    websiteLink: 'https://apple.com',
-                    githubLink: 'https://github.com',
-                    imageName: 'baen',
-                    imageAlt: 'baenbaen',
-                    description: 'lorem ipsum dolor sit amet',
+                    title: 'Wordle Clone',
+                    websiteLink: 'https://justinswordle.netlify.app',
+                    githubLink: 'https://github.com/jgpixel/WordleClone',
+                    websiteImg: 'src/assets/images/my-work-imgs/wordle.png',
+                    imageAlt: 'Wordle Clone.',
+                    description: 'A clone of the hit game "Wordle".',
                     technologiesUsed: [
                         'HTML',
                         'CSS',
-                        'JavaScript',
-                        'DEEZ.js'
+                        'JavaScript'
                     ]
                 },
                 {
-                    title: 'Title',
-                    websiteLink: 'https://apple.com',
-                    githubLink: 'https://github.com',
-                    imageName: 'baen',
-                    imageAlt: 'baenbaen',
-                    description: 'lorem ipsum dolor sit amet',
+                    title: 'NFT+',
+                    websiteLink: 'https://www.figma.com/proto/oOS4radHzRBZOTIvvzbDyi/NFT%2B?node-id=0%3A1141&scaling=contain&page-id=0%3A1&starting-point-node-id=0%3A1141',
+                    websiteImg: 'src/assets/images/my-work-imgs/nft+.png',
+                    imageAlt: 'NFT+ frames.',
+                    description: 'Design mockup for a concept NFT trading platform. Click the link to see clickable prototype!',
                     technologiesUsed: [
-                        'HTML',
-                        'CSS',
-                        'JavaScript',
-                        'DEEZ.js'
+                        'Figma',
+                        'Prototyping'
                     ]
                 },
                 {
-                    title: 'Title',
-                    websiteLink: 'https://apple.com',
-                    githubLink: 'https://github.com',
-                    imageName: 'baen',
-                    imageAlt: 'baenbaen',
-                    description: 'lorem ipsum dolor sit amet',
+                    title: 'TitanFlow',
+                    websiteLink: 'https://www.titanflow.io',
+                    websiteImg: 'src/assets/images/my-work-imgs/titanflow.png',
+                    imageAlt: 'TitanFlow landing page.',
+                    description: 'Website for stock options flow service.',
                     technologiesUsed: [
-                        'HTML',
-                        'CSS',
-                        'JavaScript',
-                        'DEEZ.js'
+                        'Webflow'
                     ]
                 },
                 {
-                    title: 'Title',
-                    websiteLink: 'https://apple.com',
-                    githubLink: 'https://github.com',
-                    imageName: 'baen',
-                    imageAlt: 'baenbaen',
-                    description: 'lorem ipsum dolor sit amet',
+                    title: 'Todo List',
+                    websiteLink: 'https://frontend-mentor-todo-app-challenge.netlify.app/',
+                    githubLink: 'https://github.com/jgpixel/Frontend-Mentor-Todo-App',
+                    websiteImg: 'src/assets/images/my-work-imgs/todo-list.png',
+                    imageAlt: 'To do list.',
+                    description: 'Front-end challenge from Frontend Mentor.',
                     technologiesUsed: [
                         'HTML',
                         'CSS',
-                        'JavaScript',
-                        'DEEZ.js'
+                        'JavaScript'
                     ]
                 },
                 {
-                    title: 'Title',
-                    websiteLink: 'https://apple.com',
-                    githubLink: 'https://github.com',
-                    imageName: 'baen',
-                    imageAlt: 'baenbaen',
-                    description: 'lorem ipsum dolor sit amet',
+                    title: 'JG Piano',
+                    websiteLink: 'https://jgpiano.netlify.app',
+                    githubLink: 'https://github.com/jgpixel/jg-piano',
+                    websiteImg: 'src/assets/images/my-work-imgs/jg-piano.png',
+                    imageAlt: 'Landing page of JG Piano.',
+                    description: 'My piano portfolio!',
                     technologiesUsed: [
                         'HTML',
                         'CSS',
-                        'JavaScript',
-                        'DEEZ.js'
-                    ]
-                },
-                {
-                    title: 'Title',
-                    websiteLink: 'https://apple.com',
-                    githubLink: 'https://github.com',
-                    imageName: 'baen',
-                    imageAlt: 'baenbaen',
-                    description: 'lorem ipsum dolor sit amet',
-                    technologiesUsed: [
-                        'HTML',
-                        'CSS',
-                        'JavaScript',
-                        'DEEZ.js'
+                        'JavaScript'
                     ]
                 }
             ]
@@ -191,7 +163,7 @@ export default class App extends Component {
                 {
                     icon: 'src/assets/icons/github-icon.svg',
                     alt: 'Github icon.',
-                    href: 'https://github.com/jgorelik23'
+                    href: 'https://github.com/jgpixel'
                 },
                 {
                     icon: 'src/assets/icons/twitter-icon.svg',
@@ -204,7 +176,7 @@ export default class App extends Component {
                     href: 'https://stackoverflow.com/users/18584468/jgpixel'
                 }
             ],
-            projectLink: 'https://github.com/jgorelik23/portfolio' // TODO: edit link
+            projectLink: 'https://github.com/jgpixel/portfolio'
         }, this.root);
     }
 }
@@ -213,6 +185,5 @@ export default class App extends Component {
 
 TODO:
 - convert all images to .webp format
-- change github username to jgpixel
 
 */

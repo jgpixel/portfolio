@@ -3,13 +3,18 @@ import Component from '../Component.js';
 export default class Navbar extends Component {
     constructor(props, root) {
         super(props, root);
-
         this.#render();
     }
 
     #render() {
         const nav = document.createElement('nav');
         nav.className = 'main-nav';
+
+        const logoAnchor = document.createElement('a');
+        Component.setAttributes({
+            class: 'link',
+            href: 'https://jgpixel.com'
+        }, logoAnchor);
 
         const logo = document.createElement('h4');
         logo.textContent = 'JG';
@@ -22,7 +27,8 @@ export default class Navbar extends Component {
         linksContainer.className = 'links-container';
 
         this.root.appendChild(nav);
-        nav.appendChild(logo);
+        nav.appendChild(logoAnchor);
+        logoAnchor.appendChild(logo);
         logo.appendChild(dot);
         nav.appendChild(linksContainer);
 
@@ -56,7 +62,6 @@ export default class Navbar extends Component {
 class NavLink extends Component {
     constructor(props, root) {
         super(props, root);
-
         this.#render();
     }
 
@@ -64,7 +69,7 @@ class NavLink extends Component {
         const a = document.createElement('a');
         a.textContent = this.props.text;
         Component.setAttributes({
-            class: 'nav-link',
+            class: 'nav-link link',
             href: `#${this.props.href}`
         }, a);
 
@@ -106,8 +111,8 @@ class HamburgerMenu extends Component {
         }
 
         const closeIcon = document.createElement('img');
-        closeIcon.classList.add('close-icon', 'hide');
         Component.setAttributes({
+            class: 'close-icon hide',
             src: 'src/assets/icons/close-icon.svg',
             draggable: false
         }, closeIcon);

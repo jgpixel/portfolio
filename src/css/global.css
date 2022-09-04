@@ -99,6 +99,11 @@ button {
     background: var(--accent);
 }
 
+.link {
+    text-decoration: none;
+    color: var(--type);
+}
+
 .red-button {
     width: fit-content;
 
@@ -180,6 +185,7 @@ button {
 .socials {
     display: flex;
     justify-content: space-evenly;
+    max-width: 300px;
 }
 
 @media only screen and (max-width: 750px) {

@@ -3,7 +3,6 @@ import Component from '../Component.js';
 export default class RedButton extends Component {
     constructor(props, root) {
         super(props, root);
-        
         this.#render();
     }
 

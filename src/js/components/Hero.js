@@ -4,7 +4,6 @@ import RedButton from './RedButton.js';
 export default class Hero extends Component{
     constructor(props, root) {
         super(props, root)
-
         this.#render();
     }
 
@@ -18,14 +17,14 @@ export default class Hero extends Component{
         heroContent.className = 'hero-content';
 
         const myNameIs = document.createElement('p');
-        myNameIs.classList.add('my-name-is', 'accent-text');
+        myNameIs.className = 'my-name-is accent-text';
         myNameIs.textContent = 'Hi, my name is'
 
         const name = document.createElement('h1');
         name.textContent = 'Justin Gorelik';
 
         const description = document.createElement('p');
-        description.classList.add('hero-description', 'grey-text');
+        description.className = 'hero-description grey-text';
         description.textContent = this.props.description;
 
         this.root.appendChild(container);
@@ -35,7 +34,7 @@ export default class Hero extends Component{
         heroContent.appendChild(name);
         
         new TextAnimation({
-            words: ['web developer', 'UX/UI designer', 'programmer', 'content creator', 'creative']
+            words: ['web developer', 'UX/UI designer', 'programmer', 'creative']
         }, heroContent);
 
         heroContent.appendChild(description);

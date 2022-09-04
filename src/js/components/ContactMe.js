@@ -4,7 +4,6 @@ import RedButton from './RedButton.js';
 export default class ContactMe extends Component {
     constructor(props, root) {
         super(props, root);
-
         this.#render();
     }
 
@@ -34,5 +33,3 @@ export default class ContactMe extends Component {
         }, contactMeContainer);
     }
 }
-
-// TODO: refactor all `classList.add` instances

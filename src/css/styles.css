@@ -36,7 +36,6 @@
     font-weight: bold;
     font-size: 1.1rem;
     color: var(--type);
-    text-decoration: none;
 
     transition: color 0.2s ease-in-out;
 }
@@ -77,7 +76,7 @@
         display: none;
 
         width: 95%;
-        
+
         margin-top: 280px;
 
         background-color: var(--dark);
@@ -94,9 +93,11 @@
     }
 
     .nav-link {
-        width: 94%; /* ? */
-        
-        margin-right: 0 !important; /* ! FIX */
+        width: 94%;
+        /* ? */
+
+        margin-right: 0 !important;
+        /* ! FIX */
         margin-bottom: 15px;
         padding: 5px 0;
 
@@ -122,11 +123,11 @@
     .flex {
         display: flex;
     }
-    
+
     .block {
         display: block;
     }
-    
+
     .hide {
         display: none;
     }
@@ -153,7 +154,7 @@ main {
 
     text-align: left;
 
-    margin-top: 30px;
+    margin-top: 40px;
 }
 
 .my-name-is {
@@ -178,11 +179,14 @@ main {
 }
 
 @keyframes flickerCaret {
-    from, to {
+
+    from,
+    to {
         opacity: 0;
     }
 
-    20%, 80% {
+    20%,
+    80% {
         opacity: 1;
     }
 }
@@ -203,6 +207,7 @@ main {
 @media only screen and (max-width: 600px) {
     .hero-description {
         width: 100%;
+        font-size: 1.1rem;
     }
 }
 
@@ -223,10 +228,7 @@ main {
 }
 
 .about-me-content {
-    /* width: clamp(300px, 600px, calc(70% + 80px)); */
-    min-height: 100vh;
-    /* height: 100vh; */
-    /* max-height: 800px; */
+    height: min(100vh, 1000px);
 
     display: flex;
     justify-content: flex-start;
@@ -235,12 +237,12 @@ main {
 }
 
 .profile-picture {
-    width: 50%;
+    width: 20%;
     max-width: 300px;
     aspect-ratio: 1 / 1;
 
     margin-bottom: 30px;
-    
+
     object-fit: cover;
 
     border: 3px solid var(--type);
@@ -254,8 +256,6 @@ main {
 }
 
 .about-me-paragraphs {
-    min-height: 100%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -265,10 +265,16 @@ main {
 
 .about-me-p {
     font-size: 1.1rem;
-    
+
     color: var(--grey-type);
 
     text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .about-me-p {
+        margin: 10px 0;
+    }
 }
 
 @media only screen and (min-width: 600px) {
@@ -280,7 +286,7 @@ main {
 .see-my-work-btn {
     color: var(--grey-type);
     font-size: 1.1rem;
-    
+
     background: none;
 
     display: flex;
@@ -330,10 +336,10 @@ main {
 
 .project-container {
     width: 80%;
-    
+
     display: flex;
     justify-content: space-between;
-    
+
     margin: 0 auto 80px auto;
 }
 
@@ -400,7 +406,7 @@ main {
     object-fit: cover;
     object-position: center;
     transition: transform 0.4s cubic-bezier(0.45, 0, 0.55, 1),
-                opacity 0.4s cubic-bezier(0.45, 0, 0.55, 1);
+        opacity 0.4s cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 .website-img-container:hover .website-img {
@@ -467,7 +473,7 @@ main {
 .timeline .experiences {
     margin: 0;
     padding: 0;
-    
+
     list-style: none;
 }
 
@@ -486,7 +492,7 @@ main {
 
 .card-content h6 {
     margin-bottom: 10px;
-    
+
     color: var(--grey-type);
 }
 
@@ -519,7 +525,7 @@ main {
         clear: right;
 
         border-radius: 10px 0px 10px 10px;
-        
+
         transform: translateX(-30px);
     }
 
@@ -528,7 +534,7 @@ main {
         clear: left;
 
         border-radius: 0 10px 10px 10px;
-        
+
         transform: translateX(30px);
     }
 
@@ -539,10 +545,10 @@ main {
         width: 20px;
 
         background-color: var(--accent);
-        
+
         position: absolute;
         top: 5px;
-        
+
         border-radius: 50%;
     }
 
@@ -559,7 +565,7 @@ main {
 
 .work-experience h5 {
     font-size: 1.3rem;
-    
+
     margin: 0 0 5px 0;
 }
 
@@ -586,7 +592,6 @@ main {
 
 .company-anchor {
     color: var(--accent);
-    text-decoration: none;
 
     transition: color 0.3s ease-in;
 }
@@ -604,6 +609,8 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+
+    margin-bottom: 30px;
 }
 
 .call-to-action {
@@ -651,28 +658,6 @@ body.no-scroll {
     font-weight: bold;
 }
 
-.j,
-.g,
-.dot {
-    animation: fadeLetter;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
-
-    opacity: 0;
-}
-
-.j {
-    animation-delay: 0.2s;
-}
-
-.g {
-    animation-delay: 0.5s;
-}
-
-.dot {
-    animation-delay: 0.8s;
-}
-
 @keyframes fadeLetter {
     to {
         opacity: 1;
@@ -688,6 +673,62 @@ body.no-scroll {
 @keyframes fadeOutOverlay {
     to {
         opacity: 0;
+    }
+}
+
+.j {
+    stroke-dasharray: 245px;
+    stroke-dashoffset: 245px;
+}
+
+.g {
+    stroke-dasharray: 405px;
+    stroke-dashoffset: 405px;
+}
+
+.dot {
+    stroke-dasharray: 59px;
+    stroke-dashoffset: 59px;
+}
+
+.j,
+.g,
+.dot {
+    fill: transparent;
+}
+
+.j,
+.g {
+    animation: drawLetter 4s ease-in-out forwards,
+               fillLetter 0.3s ease-in-out 4.2s forwards;
+}
+
+.dot {
+    animation: drawDot 4s ease-in-out forwards,
+               fillDot 0.3s ease-in-out 4.2s forwards;
+}
+
+@keyframes drawLetter {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fillLetter {
+    to {
+        fill: var(--type);
+    }
+}
+
+@keyframes drawDot {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes fillDot {
+    to {
+        fill: var(--accent);
     }
 }
 

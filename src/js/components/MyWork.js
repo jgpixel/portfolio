@@ -6,7 +6,6 @@ export default class MyWork extends Component {
 
     constructor(props, root) {
         super(props, root)
-
         this.#render();
     }
 
@@ -16,7 +15,7 @@ export default class MyWork extends Component {
 
         const projectsContainer = document.createElement('section');
         projectsContainer.id = 'work';
-        projectsContainer.classList.add('projects-container', 'container', 'section');
+        projectsContainer.className = 'projects-container container section';
 
         const title = document.createElement('h2');
         title.className = 'section-header';
@@ -77,13 +76,12 @@ export default class MyWork extends Component {
 class Project extends Component {
     constructor(props, root) {
         super(props, root);
-
         this.#render();
     }
 
     #render() {
         const projectContainer = document.createElement('div');
-        projectContainer.classList.add('project-container', 'fade-in');
+        projectContainer.className = 'project-container fade-in';
 
         if (this.props.isReversed) {
             projectContainer.classList.add('reverse-project');
@@ -95,8 +93,9 @@ class Project extends Component {
         const websiteImg = document.createElement('img');
         Component.setAttributes({
             class: 'website-img',
-            src: 'src/assets/images/my-work-imgs/wordle.png',
-            alt: this.props.imageAlt
+            src: this.props.websiteImg,
+            alt: this.props.imageAlt,
+            loading: 'lazy'
         }, websiteImg);
 
         const linksContainer = document.createElement('div');
@@ -154,8 +153,11 @@ class Project extends Component {
 
         linksContainer.appendChild(websiteAnchor);
         websiteAnchor.appendChild(websiteLinkIcon);
-        linksContainer.appendChild(githubAnchor);
-        githubAnchor.appendChild(githubIcon);
+
+        if (this.props.githubLink) {
+            linksContainer.appendChild(githubAnchor);
+            githubAnchor.appendChild(githubIcon);
+        }
 
         projectContainer.appendChild(projectDetailsContainer);
         projectDetailsContainer.appendChild(websiteTitle);

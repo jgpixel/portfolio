@@ -3,7 +3,6 @@ import Component from '../Component.js';
 export default class AboutMe extends Component {
     constructor(props, root) {
         super(props, root);
-
         this.#render();
     }
 
@@ -12,11 +11,11 @@ export default class AboutMe extends Component {
         background.className = 'dark-bg';
 
         const section = document.createElement('section');
-        section.classList.add('container', 'center', 'fade-in');
+        section.className = 'container center fade-in';
 
         const aboutMeContent = document.createElement('div');
         aboutMeContent.id = 'about';
-        aboutMeContent.classList.add('about-me-content', 'section');
+        aboutMeContent.className = 'about-me-content section'
 
         const header = document.createElement('h2');
         header.className = 'section-header';
@@ -73,8 +72,7 @@ export default class AboutMe extends Component {
 
 class Paragraph extends Component {
     constructor(props, root) {
-        super(props, root)
-
+        super(props, root);
         this.#render();
     }
 
