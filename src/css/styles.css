@@ -72,18 +72,21 @@
 }
 
 @media only screen and (max-width: 600px) {
+    .main-nav {
+        position: relative;
+    }
+
     .links-container {
         display: none;
 
         width: 95%;
-
-        margin-top: 280px;
 
         background-color: var(--dark);
 
         border-radius: 10px;
 
         position: absolute;
+        top: 80px;
         left: 50%;
         transform: translateX(-50%);
 

@@ -51,7 +51,6 @@ export default class Hero extends Component{
 class TextAnimation extends Component {
     constructor(props, root) {
         super(props, root);
-
         this.#render();
     }
 
