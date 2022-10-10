@@ -3,10 +3,10 @@ import Component from '../Component.js';
 export default class WorkExperience extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const timelineContainer = document.createElement('section');
         timelineContainer.id = 'experience';
         timelineContainer.className = 'work-experience container section';
@@ -35,10 +35,10 @@ export default class WorkExperience extends Component {
 class ExperienceCard extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const experienceCard = document.createElement('li');
         experienceCard.className = 'experience-card fade-in';
 

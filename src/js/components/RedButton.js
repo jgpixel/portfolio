@@ -3,10 +3,10 @@ import Component from '../Component.js';
 export default class RedButton extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const button = document.createElement('button');
         button.className = 'red-button';
 

@@ -4,10 +4,10 @@ import RedButton from './RedButton.js';
 export default class Hero extends Component{
     constructor(props, root) {
         super(props, root)
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const container = document.createElement('div');
         container.className = 'container';
 
@@ -34,7 +34,7 @@ export default class Hero extends Component{
         heroContent.appendChild(name);
         
         new TextAnimation({
-            words: ['web developer', 'UX/UI designer', 'programmer', 'creative']
+            words: ['programmer', 'web developer', 'UX/UI designer', 'creative', 'content creator']
         }, heroContent);
 
         heroContent.appendChild(description);
@@ -51,10 +51,10 @@ export default class Hero extends Component{
 class TextAnimation extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const h2 = document.createElement('h2');
         h2.textContent = 'I am a ';
 
@@ -73,10 +73,10 @@ class TextAnimation extends Component {
         h2.appendChild(caret);
         h2.appendChild(dot);
 
-        this.#animate(animatedWord, caret);
+        this.animate(animatedWord, caret);
     }
 
-    #animate(animatedWord, caret) {
+    animate(animatedWord, caret) {
         const titleWords = this.props.words;
 
         const BEFORE_DELETE_DELAY = 1350;

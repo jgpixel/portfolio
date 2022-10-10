@@ -1,15 +1,15 @@
 import Component from '../Component.js';
 
 export default class MyWork extends Component {
-    static #projectIsReversed = false;
-    static #moreProjectsShown = false;
+    static projectIsReversed = false;
+    static moreProjectsShown = false;
 
     constructor(props, root) {
         super(props, root)
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const darkBg = document.createElement('div');
         darkBg.className = 'dark-bg';
 
@@ -28,10 +28,10 @@ export default class MyWork extends Component {
         for (let i = 0; i < 3; i++) {
             new Project({
                 ...this.props.projects[i],
-                isReversed: MyWork.#projectIsReversed
+                isReversed: MyWork.projectIsReversed
             }, projectsContainer);
             
-            MyWork.#projectIsReversed = !MyWork.#projectIsReversed;
+            MyWork.projectIsReversed = !MyWork.projectIsReversed;
         }
 
         const moreProjectsContainer = document.createElement('div');
@@ -43,7 +43,7 @@ export default class MyWork extends Component {
         showMoreProjectsBtn.textContent = 'Show More';
         
         showMoreProjectsBtn.addEventListener('click', () => {
-            if (MyWork.#moreProjectsShown) {
+            if (MyWork.moreProjectsShown) {
                 const projects = document.querySelectorAll('.project-container');
                 
                 for (let i = 3; i < projects.length; i++) {
@@ -52,21 +52,21 @@ export default class MyWork extends Component {
 
                 showMoreProjectsBtn.textContent = 'Show More';
 
-                MyWork.#projectIsReversed = true;
+                MyWork.projectIsReversed = true;
             } else {
                 for (let i = 3; i < this.props.projects.length; i++) {
                     new Project({
                         ...this.props.projects[i],
-                        isReversed: MyWork.#projectIsReversed
+                        isReversed: MyWork.projectIsReversed
                     }, moreProjectsContainer);
 
                     showMoreProjectsBtn.textContent = 'Show Less';
                     
-                    MyWork.#projectIsReversed = !MyWork.#projectIsReversed;
+                    MyWork.projectIsReversed = !MyWork.projectIsReversed;
                 }
             }
 
-            MyWork.#moreProjectsShown = !MyWork.#moreProjectsShown;
+            MyWork.moreProjectsShown = !MyWork.moreProjectsShown;
         });
 
         projectsContainer.appendChild(showMoreProjectsBtn);
@@ -76,10 +76,10 @@ export default class MyWork extends Component {
 class Project extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const projectContainer = document.createElement('div');
         projectContainer.className = 'project-container fade-in';
 

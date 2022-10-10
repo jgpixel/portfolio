@@ -11,12 +11,12 @@ import WebsiteLoader from './components/WebsiteLoader.js';
 export default class App extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render()
+        this.render();
     }
 
-    #render() {
+    render() {
         new WebsiteLoader({
-            animationDuration: 6500
+            animationDuration: 5500
         }, this.root);
 
         new Navbar({
@@ -46,9 +46,9 @@ export default class App extends Component {
 
         new AboutMe({
             paragraphs: [
-                'Design is a passion of mine. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-                'I work with HTML, CSS, JavaScript, Figma, Adobe Photoshop, VS Code, and Final Cut Pro X.',
-                'Some more very, very, generic text about me.'
+                'Hi! My name is Justin. I am a passionate web developer and UX/UI designer.',
+                'I work with HTML, CSS, JavaScript, React, Contentful CMS, Figma, Adobe Photoshop, VS Code, and Final Cut Pro X.',
+                'Let\'s work together!'
             ]
         }, this.root);
 
@@ -70,6 +70,7 @@ export default class App extends Component {
                 {
                     title: 'NFT+',
                     websiteLink: 'https://www.figma.com/proto/oOS4radHzRBZOTIvvzbDyi/NFT%2B?node-id=0%3A1141&scaling=contain&page-id=0%3A1&starting-point-node-id=0%3A1141',
+                    githubLink: null,
                     websiteImg: 'src/assets/images/my-work-imgs/nft+.webp',
                     imageAlt: 'NFT+ frames.',
                     description: 'Design mockup for a concept NFT trading platform. Click the link to see clickable prototype!',
@@ -81,6 +82,7 @@ export default class App extends Component {
                 {
                     title: 'TitanFlow',
                     websiteLink: 'https://www.titanflow.io',
+                    githubLink: null,
                     websiteImg: 'src/assets/images/my-work-imgs/titanflow.webp',
                     imageAlt: 'TitanFlow landing page.',
                     description: 'Website for stock options flow service.',
@@ -111,7 +113,8 @@ export default class App extends Component {
                     technologiesUsed: [
                         'HTML',
                         'CSS',
-                        'JavaScript'
+                        'JavaScript',
+                        'Contentful CMS'
                     ]
                 }
             ]
@@ -155,7 +158,7 @@ export default class App extends Component {
         }, this.root);
 
         new ContactMe({
-            email: 'justin@jgpixel.com'
+            email: 'justin.gorelik@gmail.com'
         }, this.root);
 
         new Footer({

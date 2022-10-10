@@ -3,10 +3,10 @@ import Component from '../Component.js';
 export default class Navbar extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const nav = document.createElement('nav');
         nav.className = 'main-nav';
 
@@ -62,10 +62,10 @@ export default class Navbar extends Component {
 class NavLink extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const a = document.createElement('a');
         a.textContent = this.props.text;
         Component.setAttributes({
@@ -89,15 +89,15 @@ class NavLink extends Component {
 }
 
 class HamburgerMenu extends Component {
-    #menuOpen = false;
+    menuOpen = false;
 
     constructor(props, root) {
         super(props, root);
 
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const navMenuButton = document.createElement('div');
         navMenuButton.className = 'nav-menu-button';
 
@@ -122,7 +122,7 @@ class HamburgerMenu extends Component {
         navMenuButton.appendChild(closeIcon);
 
         navMenuButton.addEventListener('click', () => {
-            if (this.#menuOpen) {
+            if (this.menuOpen) {
                 hamburgerIcon.classList.add('block');
                 hamburgerIcon.classList.remove('hide');
                 closeIcon.classList.add('hide');
@@ -138,7 +138,7 @@ class HamburgerMenu extends Component {
                 this.props.nav.classList.remove('hide');
             }
             
-            this.#menuOpen = !this.#menuOpen;
+            this.menuOpen = !this.menuOpen;
         });
     }
 
@@ -146,6 +146,6 @@ class HamburgerMenu extends Component {
      * @param {boolean} menuOpen
      */
     set menuOpen(menuOpen) {
-        this.#menuOpen = menuOpen;
+        this.menuOpen = menuOpen;
     }
 }

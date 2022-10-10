@@ -185,7 +185,11 @@ button {
 .socials {
     display: flex;
     justify-content: space-evenly;
-    max-width: 300px;
+}
+
+.socials,
+.copyright {
+    max-width: 350px;
 }
 
 @media only screen and (max-width: 750px) {

@@ -231,7 +231,8 @@ main {
 }
 
 .about-me-content {
-    height: min(100vh, 1000px);
+    height: max(100vh, 800px); /* ! FIX */
+    max-height: 1000px;
 
     display: flex;
     justify-content: flex-start;
@@ -241,6 +242,8 @@ main {
 
 .profile-picture {
     width: 20%;
+    min-width: 220px;
+
     max-width: 300px;
     aspect-ratio: 1 / 1;
 
@@ -426,7 +429,7 @@ main {
     color: var(--type);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     .project-container {
         width: 95%;
     }
@@ -619,6 +622,7 @@ main {
 .call-to-action {
     margin-top: 0;
     margin-bottom: 50px;
+    text-align: center;
 }
 
 .button-icon {
@@ -663,7 +667,7 @@ body.no-scroll {
 
 .fade-out-overlay {
     animation: fadeOutOverlay;
-    animation-duration: 0.4s;
+    animation-duration: 0.3s;
     animation-fill-mode: forwards;
 }
 
@@ -676,26 +680,23 @@ body.no-scroll {
 .jg {
     stroke-dasharray: 395px;
     stroke-dashoffset: 395px;
+    stroke-linecap: square;
+
+    animation: drawLetter 3s forwards,
+        fillLetter 0.3s 4s forwards;
 }
 
 .pixel {
     stroke-dasharray: 49px;
     stroke-dashoffset: 49px;
+
+    animation: drawPixel 3s forwards,
+        fillPixel 0.3s 4s forwards;
 }
 
 .jg,
 .pixel {
     fill: transparent;
-}
-
-.jg {
-    animation: drawLetter 4s forwards,
-        fillLetter 0.3s 4.5s forwards;
-}
-
-.pixel {
-    animation: drawPixel 4s forwards,
-        fillPixel 0.3s 4.5s forwards;
 }
 
 @keyframes drawLetter {

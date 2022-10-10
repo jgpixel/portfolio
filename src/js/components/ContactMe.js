@@ -4,10 +4,10 @@ import RedButton from './RedButton.js';
 export default class ContactMe extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const contactMeContainer = document.createElement('section');
         contactMeContainer.id = 'contact';
         contactMeContainer.className = 'contact-me-container container section';

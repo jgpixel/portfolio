@@ -3,10 +3,10 @@ import Component from '../Component.js';
 export default class Footer extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const footer = document.createElement('footer');
         footer.className = 'footer';
 

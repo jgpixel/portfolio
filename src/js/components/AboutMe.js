@@ -3,10 +3,10 @@ import Component from '../Component.js';
 export default class AboutMe extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const background = document.createElement('div');
         background.className = 'dark-bg';
 
@@ -73,10 +73,10 @@ export default class AboutMe extends Component {
 class Paragraph extends Component {
     constructor(props, root) {
         super(props, root);
-        this.#render();
+        this.render();
     }
 
-    #render() {
+    render() {
         const p = document.createElement('p');
         p.className = 'about-me-p';
         p.textContent = this.props.text;
