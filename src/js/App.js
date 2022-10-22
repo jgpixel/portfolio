@@ -47,7 +47,7 @@ export default class App extends Component {
         new AboutMe({
             paragraphs: [
                 'Hi! My name is Justin. I am a passionate web developer and UX/UI designer.',
-                'I work with HTML, CSS, JavaScript, React, Contentful CMS, Figma, Adobe Photoshop, VS Code, and Final Cut Pro X.',
+                'I work with HTML, CSS, JavaScript, React.JS, Next.js, Tailwind CSS, GraphQL, Contentful CMS, Graph CMS, Figma, Adobe Photoshop, VS Code, and Final Cut Pro X.',
                 'Let\'s work together!'
             ]
         }, this.root);
@@ -123,6 +123,16 @@ export default class App extends Component {
         new WorkExperience({
             jobs: [
                 {
+                    positionTitle: 'Freelance Web Development',
+                    companyName: 'JG Pixel',
+                    companyWebsite: 'https://jgpixel.com/',
+                    workStartDate: 'December 2020',
+                    workEndDate: 'Present',
+                    jobResponsibilities: [
+                        'Design and code websites for businesses'
+                    ]
+                },
+                {
                     positionTitle: 'UX/UI Designer',
                     companyName: 'TitanFlow',
                     companyWebsite: 'https://titanflow.io/',
@@ -158,7 +168,7 @@ export default class App extends Component {
         }, this.root);
 
         new ContactMe({
-            email: 'justin.gorelik@gmail.com'
+            email: 'justin@jgpixel.com'
         }, this.root);
 
         new Footer({

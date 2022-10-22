@@ -724,3 +724,35 @@ body.no-scroll {
 }
 
 /* WEBSITE LOAD ANIMATION */
+
+/* 404 */
+
+.center-xy {
+    text-align: center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.error-title {
+    font-size: clamp(60px, 18vw, 180px);
+    margin: 30px 0
+}
+
+.center-xy p {
+    font-size: clamp(20px, 1.2vw, 60px);
+    margin: 0;
+}
+
+.error-div {
+    width: min(400px, 95%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* 404 */
