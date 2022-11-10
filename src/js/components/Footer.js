@@ -10,13 +10,17 @@ export default class Footer extends Component {
         const footer = document.createElement('footer');
         footer.className = 'footer';
 
-        const copyright = document.createElement('span');
+        const copyrightContainer = document.createElement('span');
+        copyrightContainer.className = 'copyright-container';
+
+        const copyright = document.createElement('a');
         copyright.className = 'copyright';
+        copyright.href = 'https://jgpixel.com';
         copyright.textContent = `© JG Pixel, ${new Date().getFullYear()}`;
 
         const credit = document.createElement('a');
         Component.setAttributes({
-            'class': 'credit',
+            'class': 'credit-anchor',
             'href': this.props.projectLink,
             'target': '_blank'
         }, credit);
@@ -44,7 +48,8 @@ export default class Footer extends Component {
         });
 
         this.root.appendChild(footer);
-        footer.appendChild(copyright);
+        footer.appendChild(copyrightContainer);
+        copyrightContainer.appendChild(copyright);
         footer.appendChild(credit);
         footer.appendChild(socials);
     }

@@ -55,12 +55,41 @@ export default class App extends Component {
         new MyWork({
             projects: [
                 {
+                    title: 'TitanFlow',
+                    websiteLink: 'https://titanflow.vercel.app/',
+                    githubLink: 'https://github.com/jgpixel/titanflow-next',
+                    websiteImg: 'src/assets/images/my-work-imgs/titanflow-next.webp',
+                    imageAlt: 'The home page of TitanFlow\'s website.',
+                    description: 'Website for stock options flow service "TitanFlow," featuring a blog connected to a CMS.',
+                    technologiesUsed: [
+                        'React.JS',
+                        'Next.JS',
+                        'Tailwind CSS',
+                        'Hygraph CMS',
+                        'GraphQL'
+                    ]
+                },
+                {
+                    title: 'Color Palette Generator Figma Plugin',
+                    websiteLink: 'https://www.figma.com/community/plugin/1113856043179009368/Color-Palette-Generator',
+                    githubLink: 'https://github.com/jgpixel/figma-color-palette-generator',
+                    websiteImg: 'src/assets/images/my-work-imgs/figma-plugin.webp',
+                    imageAlt: 'Thumbnail image for my Figma plugin.',
+                    description: 'Use this plugin to setup the color palette for your designs! Built-in with options for hex, RGB, and HSL color formats.',
+                    technologiesUsed: [
+                        'HTML',
+                        'CSS',
+                        'JavaScript',
+                        'TypeScript'
+                    ]
+                },
+                {
                     title: 'Wordle Clone',
                     websiteLink: 'https://justinswordle.netlify.app',
                     githubLink: 'https://github.com/jgpixel/WordleClone',
                     websiteImg: 'src/assets/images/my-work-imgs/wordle.webp',
                     imageAlt: 'Wordle Clone.',
-                    description: 'A clone of the hit game \'Wordle\'.',
+                    description: 'A clone of the hit game "Wordle".',
                     technologiesUsed: [
                         'HTML',
                         'CSS',
@@ -79,17 +108,17 @@ export default class App extends Component {
                         'Prototyping'
                     ]
                 },
-                {
-                    title: 'TitanFlow',
-                    websiteLink: 'https://www.titanflow.io',
-                    githubLink: null,
-                    websiteImg: 'src/assets/images/my-work-imgs/titanflow.webp',
-                    imageAlt: 'TitanFlow landing page.',
-                    description: 'Website for stock options flow service.',
-                    technologiesUsed: [
-                        'Webflow'
-                    ]
-                },
+                // {
+                //     title: 'TitanFlow',
+                //     websiteLink: 'https://www.titanflow.io',
+                //     githubLink: null,
+                //     websiteImg: 'src/assets/images/my-work-imgs/titanflow.webp',
+                //     imageAlt: 'TitanFlow landing page.',
+                //     description: 'Website for stock options flow service.',
+                //     technologiesUsed: [
+                //         'Webflow'
+                //     ]
+                // },
                 {
                     title: 'Todo List',
                     websiteLink: 'https://frontend-mentor-todo-app-challenge.netlify.app/',

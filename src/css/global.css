@@ -40,6 +40,11 @@ body {
     text-rendering: optimizeLegibility;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 h1,
 h2,
 h3,
@@ -149,14 +154,15 @@ button {
     justify-content: space-between;
     font-size: 1.1rem;
     text-align: center;
+    width: 100%;
 }
 
 .socials,
-.copyright {
+.copyright-container {
     width: 20%;
 }
 
-.credit {
+.credit-container {
     width: 60%;
 
     color: var(--grey-type);
@@ -165,7 +171,17 @@ button {
     transition: color 0.2s ease-in-out;
 }
 
-.credit:hover {
+.credit-anchor {
+    width: max-content;
+}
+
+.credit-anchor,
+.copyright {
+    transition: color 0.2s ease-in-out;
+}
+
+.credit-anchor:hover,
+.copyright:hover {
     color: var(--type);
 }
 
@@ -188,7 +204,7 @@ button {
 }
 
 .socials,
-.copyright {
+.copyright-container {
     max-width: 350px;
 }
 
@@ -200,13 +216,13 @@ button {
     }
 
     .socials,
-    .credit,
-    .copyright {
+    .credit-container,
+    .copyright-container {
         width: 90%;
     }
 
-    .footer .copyright,
-    .footer .credit {
+    .footer .copyright-container,
+    .footer .credit-anchor {
         margin-bottom: 40px;
     }
 }
