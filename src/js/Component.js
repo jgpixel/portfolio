@@ -43,9 +43,7 @@ export default class Component {
         const mutationObserver = new MutationObserver(() => {
             faders = document.querySelectorAll('.fade-in');
 
-            faders.forEach(fader => {
-                appearOnScroll.observe(fader);
-            });
+            faders.forEach(fader => appearOnScroll.observe(fader));
         });
 
         mutationObserver.observe(root, observeOptions);

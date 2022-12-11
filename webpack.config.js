@@ -8,5 +8,5 @@ module.exports = {
         main: './src/js',
         errorPage: './src/js/ErrorPage'
     },
-    mode: "none"
+    mode: 'none'
 }

@@ -25,7 +25,7 @@ export default class Hero extends Component{
 
         const description = document.createElement('p');
         description.className = 'hero-description grey-text';
-        description.textContent = this.props.description;
+        description.textContent = 'Hey there! I am a passionate front-end developer and UX/UI designer. I am a problem solver, and pay extreme attention to detail in my designs. Let\'s work together.';
 
         this.root.appendChild(container);
         container.appendChild(main);

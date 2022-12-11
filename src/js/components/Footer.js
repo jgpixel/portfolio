@@ -1,5 +1,23 @@
 import Component from '../Component.js';
 
+const socialMediaLinks = [
+    {
+        icon: 'src/assets/icons/github-icon.svg',
+        alt: 'Github icon.',
+        href: 'https://github.com/jgpixel'
+    },
+    {
+        icon: 'src/assets/icons/twitter-icon.svg',
+        alt: 'Twitter icon.',
+        href: 'https://twitter.com/jg_pixel'
+    },
+    {
+        icon: 'src/assets/icons/stack-overflow-icon.svg',
+        alt: 'Stack Overflow icon.',
+        href: 'https://stackoverflow.com/users/18584468/jgpixel'
+    }
+];
+
 export default class Footer extends Component {
     constructor(props, root) {
         super(props, root);
@@ -21,7 +39,7 @@ export default class Footer extends Component {
         const credit = document.createElement('a');
         Component.setAttributes({
             'class': 'credit-anchor',
-            'href': this.props.projectLink,
+            'href': 'https://github.com/jgpixel/portfolio',
             'target': '_blank'
         }, credit);
         credit.textContent = 'Designed and developed by Justin Gorelik'
@@ -29,7 +47,7 @@ export default class Footer extends Component {
         const socials = document.createElement('div');
         socials.className = 'socials'
 
-        this.props.socials.forEach(social => {
+        socialMediaLinks.forEach(social => {
             const socialLink = document.createElement('a');
             Component.setAttributes({
                 'href': social.href,

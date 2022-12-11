@@ -23,12 +23,14 @@ export default class ContactMe extends Component {
         this.root.appendChild(contactMeContainer);
         contactMeContainer.appendChild(title);
         contactMeContainer.appendChild(callToAction);
+
+        const email = 'justin@jgpixel.com';
         
         new RedButton({
-            text: this.props.email,
+            text: email,
             icon: 'src/assets/icons/email-icon.svg',
             callback: () => {
-                location.href = `mailto:${this.props.email}&subject=Business Inquiry`;
+                location.href = `mailto:${email}&subject=Business Inquiry`;
             }
         }, contactMeContainer);
     }

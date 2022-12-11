@@ -1,5 +1,24 @@
 import Component from '../Component.js';
 
+const links = [
+    {
+        text: 'About',
+        href: 'about'
+    },
+    {
+        text: 'Projects',
+        href: 'projects'
+    },
+    {
+        text: 'Experience',
+        href: 'experience'
+    },
+    {
+        text: 'Contact',
+        href: 'contact'
+    }
+];
+
 export default class Navbar extends Component {
     constructor(props, root) {
         super(props, root);
@@ -36,12 +55,12 @@ export default class Navbar extends Component {
             nav: linksContainer
         }, nav);
 
-        this.props.links.forEach(link => {
+        links.forEach(link => (
             new NavLink({
                 ...link,
                 hamburgerMenu: hamburgerMenu
-            }, linksContainer);
-        });
+            }, linksContainer)
+        ));
 
         let prevScrollPos = window.pageYOffset;
 

@@ -1,5 +1,11 @@
 import Component from '../Component.js';
 
+const paragraphs = [
+    'Hi! My name is Justin. I am a passionate web developer and UX/UI designer.',
+    'I work with HTML, CSS, JavaScript, React.JS, Next.js, Tailwind CSS, GraphQL, Contentful CMS, Graph CMS, Figma, Adobe Photoshop, VS Code, and Final Cut Pro X.',
+    'Let\'s work together!'
+];
+
 export default class AboutMe extends Component {
     constructor(props, root) {
         super(props, root);
@@ -39,11 +45,11 @@ export default class AboutMe extends Component {
         aboutMeContent.appendChild(profilePicture);
         aboutMeContent.appendChild(aboutMeParagraphs);
 
-        this.props.paragraphs.forEach(paragraph => {
+        paragraphs.forEach(paragraph => (
             new Paragraph({
                 text: paragraph
-            }, aboutMeParagraphs);
-        });
+            }, aboutMeParagraphs)
+        ));
 
         const seeMyWorkBtn = document.createElement('button');
         seeMyWorkBtn.className = 'see-my-work-btn';
@@ -64,7 +70,7 @@ export default class AboutMe extends Component {
         seeMyWorkBtn.appendChild(doubleDownArrow);
 
         seeMyWorkBtn.addEventListener('click', () => {
-            const { left, top } = Component.getElementOffset(document.getElementById('work'));
+            const { left, top } = Component.getElementOffset(document.getElementById('projects'));
             window.scrollTo(left, top);
         });
     }
